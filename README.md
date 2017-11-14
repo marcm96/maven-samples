@@ -1,8 +1,8 @@
-## Sample multi-module maven project integration with Codacy and Travis CI
+## Sample multi-model maven project integration with Codacy and Travis CI
 
 [![Build status](https://travis-ci.org/toratrading/maven-samples.svg?branch=master)](https://travis-ci.org/toratrading/maven-samples/builds) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1d5ac34e3b8e48d8b0f2f68c80499047)](https://www.codacy.com/app/yohlulz/maven-samples?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=toratrading/maven-samples&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/1d5ac34e3b8e48d8b0f2f68c80499047)](https://www.codacy.com/app/yohlulz/maven-samples?utm_source=github.com&utm_medium=referral&utm_content=toratrading/maven-samples&utm_campaign=Badge_Coverage)
 
-This com.mm.repository is intented as an example of how a multi-module Maven project can be setup and integrated with:
+This com.mm.repository is intented as an example of how a multi-model Maven project can be setup and integrated with:
 * **[Codacy](https://www.codacy.com "Codacy")** - static analysis front-end that uses tools for a number of languages. When integrated with your GitHub repo, it analyses your master branch and any other you select in the settings and gives you a summary of possible issues with your code. Not only that; whenever a new pull request is opened, it checks whether it fixes any of those issue (good) or it adds new ones (bad). This allows you to try and set a trend towards cleanliness, or at least to avoid getting further from it.
 * **[Travis CI](https://travis-ci.org/ "Travis CI")** - (Wikipedia)
 > hosted, distributed continuous integration service used to build and test software projects hosted at GitHubhosted, distributed continuous integration service used to build and test software projects hosted at GitHub
@@ -40,10 +40,10 @@ cache:
  script:  
  - mvn package
  ```
-Codacy expects a single coverage report file, but in case of a multi module maven project normally a report file is generate per each module. The new versions of jacoco Maven plugin (0.7.7+) introduced a new goal [jacoco:report-aggregate](http://www.eclemma.org/jacoco/trunk/doc/report-aggregate-mojo.html "jacoco:report-aggregate") which can aggregate multiple coverage reports into a single one. 
+Codacy expects a single coverage report file, but in case of a multi model maven project normally a report file is generate per each model. The new versions of jacoco Maven plugin (0.7.7+) introduced a new goal [jacoco:report-aggregate](http://www.eclemma.org/jacoco/trunk/doc/report-aggregate-mojo.html "jacoco:report-aggregate") which can aggregate multiple coverage reports into a single one. 
 > Creates a structured code coverage report (HTML, XML, and CSV) from multiple projects within reactor. The report is created from all modules this project depends on. From those projects class and source files as well as JaCoCo execution data files will be collected. In addition execution data is collected from the project itself. This also allows to create coverage reports when tests are in separate projects than the code under test, for example in case of integration tests.
 
-This plugin collects all coverage reports but only from the modules that are included as a dependency. To accomodate this requirement, a **report** module was created with dependencies of the remaining modules.
+This plugin collects all coverage reports but only from the modules that are included as a dependency. To accomodate this requirement, a **report** model was created with dependencies of the remaining modules.
 
 
 From the [Codacy Coverage report tool](https://github.com/codacy/codacy-coverage-reporter/#travis-ci "Codacy Coverage report tool"), some more steps need to be added to report code coverage as well:

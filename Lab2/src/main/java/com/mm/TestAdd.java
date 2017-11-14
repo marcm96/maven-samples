@@ -91,5 +91,19 @@ public class TestAdd {
         new Runner(opt).run();
 
     }
-
 }
+
+    /*
+     * ============================== HOW TO RUN THIS TEST: ====================================
+     *
+     *
+     * You can run this test:
+     *
+     * a) Via the command line:
+     *    $ mvn clean install
+     *    $ java -jar target/benchmarks.jar JMHSample_26 -f 1
+     *
+     * b) Via the Java API:
+     *    (see the JMH homepage for possible caveats when running from IDE:
+     *      http://openjdk.java.net/projects/code-tools/jmh/)
+     */
